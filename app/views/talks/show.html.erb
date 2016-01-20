@@ -10,5 +10,16 @@
   <%= @talk.text %>
 </p>
 
+<hr>
+
+<dl>
+<% @talk.versions.each do |version| %>
+    <dt><%= version.event %></dt>
+    <dd>
+        <%= version.changeset %>
+    </dd>
+<% end %>
+</dl>
+
 <%= link_to 'Edit', edit_talk_path(@talk) %> |
 <%= link_to 'Back', talks_path %>
