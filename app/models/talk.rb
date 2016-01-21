@@ -1,3 +1,3 @@
 class Talk < ActiveRecord::Base
-  has_paper_trail ignore: [:title, :published], skip: [:updated_at],  on: [:update, :destroy]
+  has_paper_trail meta: { talk_published: :published }
 end
